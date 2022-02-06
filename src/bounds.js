@@ -1,9 +1,10 @@
 export default class Bounds {
   constructor(object) {
-    this.$ = {};
-    this.$.minlat = object.minlat;
-    this.$.minlon = object.minlon;
-    this.$.maxlat = object.maxlat;
-    this.$.maxlon = object.maxlon;
+    this.$ = {
+      minlat: object.$ ? object.$.minlat : object.minlat,
+      minlon: object.$ ? object.$.minlon : object.minlon,
+      maxlat: object.$ ? object.$.maxlat : object.maxlat,
+      maxlon: object.$ ? object.$.maxlon : object.maxlon
+    };
   }
 }
